@@ -18,9 +18,11 @@ local function Taglist(s, theme)
 
 	-- Taglist label functions
 	awful.widget.taglist.filter.all = function(t, args)
-		if t.selected or #t:clients() > 0 then
-			return orig_filter(t, args)
-		end
+		return orig_filter(t, args)
+
+		-- if t.selected or #t:clients() > 0 then
+		-- 	return orig_filter(t, args)
+		-- end
 	end
 
 	local mytaglist = awful.widget.taglist({
@@ -41,16 +43,14 @@ local function Taglist(s, theme)
 		},
 		widget_template = {
 			{
-				left = 0,
-				right = 8,
+				left = 4,
+				right = 4,
 				widget = wibox.container.margin,
 				{
-					-- shape = gears.shape.rounded_rect,
-					shape = function(cr, width, height)
-						gears.shape.rounded_rect(cr, width, height, 4) -- Rounded corners (optional)
-					end,
+					shape = gears.shape.rounded_rect,
 					widget = wibox.container.background,
-					bg = theme.colors.background,
+					-- bg = theme.colors.background,
+					bg = "#161616",
 					{
 						{
 							id = "wrapper_margin_role",
@@ -71,14 +71,6 @@ local function Taglist(s, theme)
 								shape = gears.shape.circle,
 								widget = wibox.container.background,
 							},
-						},
-						{
-							margins = 5,
-							widget = wibox.container.margin,
-						},
-						{
-							id = "text_role",
-							widget = wibox.widget.textbox,
 						},
 						{
 							margins = 5,
