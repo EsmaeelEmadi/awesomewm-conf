@@ -820,11 +820,3 @@ end
 
 -- beautiful.size_hint_honor = true
 -- beautiful.gap_single_client = true
-beautiful.useless_gap = 5
-
-naughty.notify({
-    title = "hello",
-    text = "dear sexy slaught",
-    timeout = 3
-
-})

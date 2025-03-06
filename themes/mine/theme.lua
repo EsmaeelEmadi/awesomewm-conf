@@ -6,6 +6,7 @@ local beautiful = require("beautiful")
 local dpi = require("beautiful.xresources").apply_dpi
 local os = os
 local theme = {}
+require("themes.mine.notif")
 
 -- -- naughty
 naughty.config.ontop = true
